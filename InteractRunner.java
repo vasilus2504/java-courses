@@ -5,10 +5,16 @@ import java.util.Scanner;
 */
 public class InteractRunner{
 	public static void main(String arg[]){
+		/**
+		* Citirea argumentilor de la tastatura
+		*/
 		Scanner reader = new Scanner(System.in);
 		try{
 			Calculator calculator = new Calculator();
 			String exit = "no";
+			/**
+			* Efectuiaza calcule aritmetice pana nu se introduce cuvantul {@code yes}
+			*/
 			while(!exit.equals("yes")){
 				System.out.println("Enter first arg: ");
 				String first = reader.next();

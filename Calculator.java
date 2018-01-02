@@ -29,7 +29,8 @@ public class Calculator{
 	
 	/**
 	* Produsul argumentelor
-	* @param args Argumentii produsului
+	* @param first  primul argument al produsului
+	* @param second al doilea argument al produsului
 	*/
 	public void prod(int first, int second){
 		this.result = first * second;
@@ -37,7 +38,8 @@ public class Calculator{
 	
 	/**
 	* Dividerea argumentelor
-	* @param args Argumentii dividerii
+	* @param first  primul argument al dividerii
+	* @param second al doilea argument al dividerii
 	*/
 	public void div(int first, int second){
 		this.result = first / second;
@@ -45,7 +47,8 @@ public class Calculator{
 	
 	/**
 	* Restul dividerii argumentelor
-	* @param args Argumentii dividerii
+	* @param first  primul argument al dividerii
+	* @param second al doilea argument al dividerii
 	*/
 	public void mod(int first, int second){
 		this.result = first % second;
