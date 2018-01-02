@@ -12,11 +12,24 @@ public class InteractRunner{
 			while(!exit.equals("yes")){
 				System.out.println("Enter first arg: ");
 				String first = reader.next();
+				System.out.println("Enter operator + - * / %: ");
+				String operator = reader.next();
+				char op = operator.charAt(0);
 				System.out.println("Enter second arg: ");
 				String second = reader.next();
-				calculator.add(Integer.valueOf(first), Integer.valueOf(second));
+				switch(op){
+					case '+': calculator.add(Integer.valueOf(first), Integer.valueOf(second)); break;
+					case '-': calculator.diff(Integer.valueOf(first), Integer.valueOf(second)); break;
+					case '*': calculator.prod(Integer.valueOf(first), Integer.valueOf(second)); break;
+					case '/': calculator.div(Integer.valueOf(first), Integer.valueOf(second)); break;
+					case '%': calculator.mod(Integer.valueOf(first), Integer.valueOf(second)); break;
+				}			
 				System.out.println("Result: " + calculator.getResult());
-				calculator.cleanResult();
+				if(op == '*'){
+					calculator.cleanResult(1);
+				}else{
+					calculator.cleanResult(0);
+				}
 				System.out.println("Exit : yes/no: ");
 				exit = reader.next();
 			}

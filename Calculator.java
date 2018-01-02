@@ -18,6 +18,41 @@ public class Calculator{
 	}
 	
 	/**
+	* Diferenta argumentelor
+	* @param args Argumentii diferentei
+	*/
+	public void diff(int ... args){
+		for(Integer arg : args){
+			this.result -= arg;
+		}
+	}
+	
+	/**
+	* Produsul argumentelor
+	* @param args Argumentii produsului
+	*/
+	public void prod(int first, int second){
+		this.result = first * second;
+	}
+	
+	/**
+	* Dividerea argumentelor
+	* @param args Argumentii dividerii
+	*/
+	public void div(int first, int second){
+		this.result = first / second;
+	}
+	
+	/**
+	* Restul dividerii argumentelor
+	* @param args Argumentii dividerii
+	*/
+	public void mod(int first, int second){
+		this.result = first % second;
+	}
+
+	
+	/**
 	* Returneaza rezultatul
 	* @return rezultatul calcularii
 	*/
@@ -28,7 +63,7 @@ public class Calculator{
 	/**
 	*	Curatirea rezultatului
 	*/
-	public void cleanResult(){
-		this.result = 0;
+	public void cleanResult(int result){
+		this.result = result;
 	}
 }
