@@ -72,4 +72,8 @@ public class Calculator{
 	public void cleanResult(int result){
 		this.result = result;
 	}
+
+	public void test(String la){
+		
+	}
 }
