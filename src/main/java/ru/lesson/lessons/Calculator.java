@@ -1,5 +1,9 @@
+package ru.lesson.lessons;
+
 /**
-*	Class realizare Calculator
+* Class realizare Calculator
+* @author Ticau Vasile
+* @since 02.01.2018
 */
 public class Calculator{
 	/**
@@ -19,12 +23,11 @@ public class Calculator{
 	
 	/**
 	* Diferenta argumentelor
-	* @param args Argumentii diferentei
+	 * @param first  primul argument al diferentei
+	 * @param second al doilea argument al diferentei
 	*/
-	public void diff(int ... args){
-		for(Integer arg : args){
-			this.result -= arg;
-		}
+	public void diff(int first, int second){
+		this.result = first - second;
 	}
 	
 	/**

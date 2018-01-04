@@ -6,7 +6,7 @@
 
 public class ClinicRunner{
 	public static void main(String[] arg){
-		final Clinic clinic = new Clinic(10);
+		final Clinic clinic = new Clinic();
 		clinic.addClient(0, new Client("Brown", new Cat("Digy")));
 		clinic.addClient(1, new Client("Nicky", new Dog(new Animal("Sparky"))));
 		clinic.addClient(2, new Client("Ann", new CatDog(new Cat("Tom"), new Dog(new Animal("Piccy")))));
@@ -17,20 +17,20 @@ public class ClinicRunner{
 		clinic.addClient(7, new Client("George", new Cat("Pigy")));
 		
 		clinic.showDataBase();
-		
+
 		clinic.findClientByPetName("Pigy");
 		clinic.findPetByClientId("Brown");
-		
+
 		clinic.editClientName("Spy", "Nick");
 		clinic.showDataBase();
 		clinic.editPetName("Brown", "Spyki");
 		clinic.showDataBase();
-		
-		clinic.deleteClientByPetName("Spyki");
+
+		clinic.deleteClientByPetName("Sparky");
 		clinic.showDataBase();
-		clinic.deletePetByClientName("George");
+		clinic.deletePetByClientName("Anna");
 		clinic.showDataBase();
-		
+
 		clinic.validateByClientId("Ann");
 		clinic.validateByPetName("Spark");
 		

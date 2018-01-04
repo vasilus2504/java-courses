@@ -49,4 +49,12 @@ public class Client{
 	public Pet getPet(){
 		return this.pet;
 	}
+
+	/**
+	 * Setter setPet
+	 * @param pet Client pet
+	 */
+	public void setPet(Pet pet) {
+		this.pet = pet;
+	}
 }

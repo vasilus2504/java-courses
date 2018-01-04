@@ -1,7 +1,11 @@
+package ru.lesson.lessons;
+
 import java.util.Scanner;
 
 /**
 * Class pentru pornirea calculatorului. Ofera posibilitatea de interactiune cu utilizatorul
+* @author Ticau Vasile
+* @since 02.01.2018
 */
 public class InteractRunner{
 	public static void main(String arg[]){

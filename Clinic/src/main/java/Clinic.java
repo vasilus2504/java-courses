@@ -1,5 +1,5 @@
-import java.util.Arrays;
-import org.apache.commons.lang3.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
 * Clinic - clasa clinicii. Clinica are clienti
@@ -11,14 +11,13 @@ public class Clinic{
 	/**
 	* Lista clientilor
 	*/
-	private Client[] clients;
+	private List<Client> clients;
 	
 	/**
 	* Constructor
-	* @param size Capacitatea clinicii
 	*/
-	public Clinic(final int size){
-		this.clients = new Client[size];
+	public Clinic(){
+		this.clients = new ArrayList<Client>();
 	}
 	
 	/**
@@ -32,36 +31,35 @@ public class Clinic{
 			}
 		}
 	}
-	
-	
+
 	/**
 	* Adaugam client
 	* @param position Pozitie client
 	* @param client Clientul
 	*/
 	public void addClient(final int position, final Client client){
-		this.clients[position] = client;
+		this.clients.add(client);
 	}
 	
 	/**
 	* Cauta client dupa numele anumalului de companie
 	* @param petName Numele animalului de companie
 	*/
-	public Client[] findClientByPetName(final String petName){	
+	public List findClientByPetName(final String petName){
 		int cont = 0; // numarul de clienti gasiti dupa acelasi criteriu
 		for( Client client : this.clients){
 			if(client != null && client.getPet().getName().equals(petName)){
 				cont++;
 			}			
 		}
-		Client[] foundedClients = new Client[cont];
+		List<Client>foundedClients = new ArrayList<Client>();
 		if(cont > 0){
 			System.out.println("Founded clients:");
 			cont = 0;
 			for( Client client : this.clients){
 				if(client != null && client.getPet().getName().equals(petName)){
 					System.out.println("Pet " + client.getPet().getName() + " belongs " + client.getId());
-					foundedClients[cont] = client;
+					foundedClients.add(client);
 					cont++;
 				}			
 			}
@@ -75,21 +73,21 @@ public class Clinic{
 	* Cauta animalul de companie dupa numele clientului
 	* @param clientId Numele clientului
 	*/
-	public Pet[] findPetByClientId(final String clientId){
+	public List findPetByClientId(final String clientId){
 		int cont = 0; // numarul de animale de companie gasite dupa acelasi criteriu
 		for( Client client : this.clients){
 			if(client != null && client.getId().equals(clientId)){
 				cont++;
 			}			
 		}
-		Pet[] foundedPets = new Pet[cont];
+		List<Pet> foundedPets = new ArrayList<Pet>();
 		if(cont > 0){
 			System.out.println("Founded pets:");
 			cont = 0;
 			for( Client client : this.clients){
 				if(client != null && client.getId().equals(clientId)){
 					System.out.println("Client " + client.getId() + " has a pet " + client.getPet().getName());
-					foundedPets[cont] = client.getPet();
+					foundedPets.add(client.getPet());
 					cont++;
 				}			
 			}
@@ -149,16 +147,12 @@ public class Clinic{
 		if(cont == 0){
 			System.out.println("Asa animal de companie nu este inregistrat");
 		}
-		Client[] afterDelListClients = clients;
-		int position = 0; // pozitia in vector a inregistrarii
 		for( Client client : this.clients){
 			if(client != null && client.getPet().getName().equals(petName)){
-				continue;
+				clients.remove(client);
+				break;
 			}
-			afterDelListClients[position] = client;
-			position++;
 		}
-		this.clients = afterDelListClients;
 	}
 
 	/**
@@ -175,21 +169,17 @@ public class Clinic{
 		if(cont == 0){
 			System.out.println("Asa client nu este inregistrat");
 		}
-		Client[] afterDelListClients = clients;
-		int position = 0; // pozitia in vector a inregistrarii
+		List<Client> afterDelListClients = clients;
 		for( Client client : this.clients){
 			if(client != null && client.getId().equals(clientId)){
-				continue;
+				this.clients.remove(client);
+				break;
 			}
-			afterDelListClients[position] = client;
-			position++;
 		}
-		this.clients = afterDelListClients;
 	}
 	
 	/**
 	* Validarea datelor referitor la animalul de companie
-	* @param petName Numele animalului de companie
 	*/
 	public void validateByClientId(final String clientId){
 		int cont = 0; // numarul de clienti gasiti dupa acelasi criteriu

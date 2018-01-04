@@ -1,5 +1,9 @@
+package ru.lesson.lessons;
+
 /**
 * Realizarea clasei Calculate. Operatii aritmetice
+* @author Ticau Vasile
+* @since 02.01.2018
 */
 public class Calculate{
 	public static void main(String args[]){
